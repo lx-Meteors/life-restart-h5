@@ -1,0 +1,53 @@
+{
+  "identityId": "ai-founder",
+  "nodes": {
+    "ai-n1": {
+      "id": "ai-n1",
+      "age": 28,
+      "title": "BP被投资人怼了第十次",
+      "description": "「你们的壁垒是什么？」你看着PPT里的「颠覆」「生态」「闭环」，沉默。",
+      "choices": [
+        { "id": "ai-pivot-product", "text": "砍掉虚的，做垂直小产品", "delta": { "career": 25, "wealth": -5 }, "nextNodeId": "ai-n2" },
+        { "id": "ai-keep-pitch", "text": "继续讲故事，融到钱再说", "delta": { "wealth": 20, "career": -10, "happiness": -5 }, "nextNodeId": "ai-n2" },
+        { "id": "ai-cofounder", "text": "找技术大牛合伙", "delta": { "career": 30, "love": -5 }, "nextNodeId": "ai-n2" }
+      ]
+    },
+    "ai-n2": {
+      "id": "ai-n2",
+      "age": 30,
+      "title": "大模型API涨价，生死抉择",
+      "description": "成本翻倍，用户增长却慢。团队有人离职去大厂了。",
+      "choices": [
+        { "id": "ai-all-in-fail", "text": "借钱续命，赌政策利好", "delta": { "wealth": -25, "career": 10 }, "randomOutcomes": [
+          { "chance": 45, "label": "融资断裂，团队解散", "delta": { "wealth": -20, "career": -15, "happiness": -25 } },
+          { "chance": 55, "label": "拿到天使续命", "delta": { "wealth": 15, "career": 20 } }
+        ], "nextNodeId": "ai-n3" },
+        { "id": "ai-product-success", "text": "改做企业付费版", "delta": { "wealth": 25, "career": 30 }, "nextNodeId": "ai-n3" },
+        { "id": "ai-acquihire", "text": "被大厂收购，团队并入", "delta": { "wealth": 35, "career": 15, "happiness": 10 }, "nextNodeId": "ai-n3" }
+      ]
+    },
+    "ai-n3": {
+      "id": "ai-n3",
+      "age": 33,
+      "title": "Agent浪潮，跟还是不跟？",
+      "description": "竞品一周一个demo，你在朋友圈发「深耕场景」。",
+      "choices": [
+        { "id": "choice-ai-startup", "text": "All in Agent，再融一轮", "delta": { "career": 35, "wealth": -15 }, "nextNodeId": "ai-n4" },
+        { "id": "ai-profit-first", "text": "先盈利，不追风口", "delta": { "wealth": 25, "happiness": 20 }, "nextNodeId": "ai-n4" },
+        { "id": "ai-exit", "text": "卖掉公司，落袋为安", "delta": { "wealth": 40, "career": 10, "happiness": 25 }, "nextNodeId": "ai-n4" }
+      ]
+    },
+    "ai-n4": {
+      "id": "ai-n4",
+      "age": 36,
+      "title": "AI创业者的终局",
+      "isFinale": true,
+      "choices": [
+        { "id": "ai-end-unicorn", "text": "B轮后成为行业黑马", "delta": { "wealth": 40, "career": 35 }, "endingId": "ai-startup-unicorn" },
+        { "id": "ai-end-rising", "text": "稳扎稳打的新贵", "delta": { "career": 30, "wealth": 25 }, "endingId": "ai-rising" },
+        { "id": "ai-end-burst", "text": "泡沫破裂，带着经验重来", "delta": { "wealth": -20, "happiness": 10 }, "endingId": "ai-bubble-burst" },
+        { "id": "ai-end-wealth", "text": "套现退休，投下一批创业者", "delta": { "wealth": 45, "happiness": 30 }, "endingId": "wealth-freedom" }
+      ]
+    }
+  }
+}

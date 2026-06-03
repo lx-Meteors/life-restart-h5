@@ -1,0 +1,60 @@
+{
+  "identityId": "underdog",
+  "nodes": {
+    "ud-n1": {
+      "id": "ud-n1",
+      "age": 24,
+      "title": "富婆（哥）对你展开追求",
+      "description": "对方开保时捷来奶茶店接你下班，说欣赏你的「真实」。弹幕里有人刷：这不就是屌丝傍富婆剧本？",
+      "flavor": "反差名场面：接受 vs 拒绝，命运分叉",
+      "choices": [
+        { "id": "ud-accept-rich", "text": "接受，少奋斗二十年", "delta": { "wealth": 50, "love": 30, "happiness": 15, "career": -10 }, "nextNodeId": "ud-n2a" },
+        { "id": "ud-reject-rich", "text": "拒绝，我要靠自己", "delta": { "love": -10, "happiness": 10, "career": 25 }, "nextNodeId": "ud-n2b" }
+      ]
+    },
+    "ud-n2a": {
+      "id": "ud-n2a",
+      "age": 26,
+      "title": "对方家里给你100万「创业基金」",
+      "description": "前提是不能丢脸。钱到账那天，你第一次觉得余额宝的数字这么不真实。",
+      "choices": [
+        { "id": "choice-buy-house", "text": "买房稳住面子", "delta": { "wealth": -15, "happiness": 15 }, "nextNodeId": "ud-n3" },
+        { "id": "ud-startup-rich", "text": "创业，证明自己不是吃软饭", "delta": { "career": 30, "wealth": -10 }, "nextNodeId": "ud-n3" },
+        { "id": "choice-travel-world", "text": "环球旅行，先享受再说", "delta": { "happiness": 30, "wealth": -25, "career": -15 }, "nextNodeId": "ud-n3" },
+        { "id": "ud-invest-safe", "text": "稳健理财，别折腾", "delta": { "wealth": 15, "happiness": 10 }, "nextNodeId": "ud-n3" }
+      ]
+    },
+    "ud-n2b": {
+      "id": "ud-n2b",
+      "age": 26,
+      "title": "你攒下人生第一笔10万",
+      "description": "三年没休假换来的。短视频里有人晒币圈一夜翻倍，你心动了。",
+      "choices": [
+        { "id": "ud-crypto", "text": "冲币圈合约，赌一把", "delta": {}, "randomOutcomes": [
+          { "chance": 45, "label": "合约爆仓，一夜回到解放前", "delta": { "wealth": -50, "happiness": -30 }, "endingHint": "choice-buy-crypto-lose" },
+          { "chance": 55, "label": "踩中一波，账户翻倍", "delta": { "wealth": 50, "happiness": 20 }, "endingHint": "choice-buy-crypto-win" }
+        ], "nextNodeId": "ud-n3" },
+        { "id": "ud-save-reject", "text": "继续攒钱，绝不碰币", "delta": { "wealth": 15, "happiness": 5, "career": 10 }, "nextNodeId": "ud-n3" },
+        { "id": "ud-night-school", "text": "报班学技能，准备跳槽", "delta": { "career": 25, "wealth": -8 }, "nextNodeId": "ud-n3" }
+      ]
+    },
+    "ud-n3": {
+      "id": "ud-n3",
+      "age": 30,
+      "title": "事业方向：你要怎么逆袭？",
+      "description": "直播、AI、电商、餐饮——每一个都是别人财富自由的案例，也是别人负债的墓碑。",
+      "isFinale": true,
+      "choices": [
+        { "id": "ud-end-rich-wife", "text": "低调做豪门伴侣，投资家族产业", "requiresAnyChoice": ["ud-accept-rich"], "delta": { "wealth": 20, "love": 15, "happiness": 10 }, "endingId": "rich-wife-husband" },
+        { "id": "choice-livestream", "text": "直播带货，人设是励志屌丝", "delta": { "career": 30, "wealth": 25, "happiness": 5 }, "endingId": "livestream-star" },
+        { "id": "choice-ai-startup", "text": "AI创业，做垂直小应用", "requiresAnyChoice": ["ud-reject-rich"], "hideIfAnyChoice": ["ud-accept-rich"], "delta": { "career": 35, "wealth": 15 }, "endingId": "ai-rising" },
+        { "id": "ud-end-self-made", "text": "继续打拼，证明自己", "requiresAnyChoice": ["ud-reject-rich"], "delta": { "career": 30, "wealth": 20, "happiness": 15 }, "endingId": "self-made-hero" },
+        { "id": "choice-ecommerce", "text": "电商创业，拼多多+抖音双开", "delta": { "career": 25, "wealth": 30 }, "endingId": "e-commerce-king" },
+        { "id": "choice-restaurant", "text": "餐饮加盟，相信胃不会骗人", "delta": { "career": 20, "wealth": 10 }, "randomOutcomes": [
+          { "chance": 50, "label": "加盟坑深，血亏", "delta": { "wealth": -30, "happiness": -20 } },
+          { "chance": 50, "label": "小店爆火，排队打卡", "delta": { "wealth": 25, "career": 20 } }
+        ], "endingId": "restaurant-boss" }
+      ]
+    }
+  }
+}

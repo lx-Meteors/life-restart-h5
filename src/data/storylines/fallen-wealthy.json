@@ -1,0 +1,61 @@
+{
+  "identityId": "fallen-wealthy",
+  "nodes": {
+    "fw-n1": {
+      "id": "fw-n1",
+      "age": 18,
+      "title": "高考失利，家里已负债",
+      "description": "分数只够二本，父母却还在讨论要不要卖车凑复读费。亲戚群里有人发《十大买房坑》链接，没人@你。",
+      "flavor": "现实比模拟器更狠：房跌、股跌、信心也跌",
+      "choices": [
+        { "id": "fw-repeat", "text": "复读一年，赌命运翻盘", "delta": { "career": 15, "happiness": -10, "wealth": -5 }, "nextNodeId": "fw-n2" },
+        { "id": "fw-work", "text": "不读了，进厂/服务业打工", "delta": { "wealth": 10, "career": 5, "happiness": -5 }, "nextNodeId": "fw-n2" },
+        { "id": "fw-startup-early", "text": "边打工边琢磨小本创业", "delta": { "career": 20, "wealth": -5, "happiness": 5 }, "nextNodeId": "fw-n2" }
+      ]
+    },
+    "fw-n2": {
+      "id": "fw-n2",
+      "age": 22,
+      "title": "家里凑了10万「重启资金」",
+      "description": "爸妈说这是家里最后的流动性。买房？基金？创业？存银行？四个选项背后都是热搜里的血泪史。",
+      "flavor": "十大坑：买房、炒股、加盟、理财…你至少占俩",
+      "choices": [
+        { "id": "choice-buy-house", "text": "首付上车，觉得房价还会涨", "delta": { "wealth": -25, "happiness": 10, "career": -5 }, "nextNodeId": "fw-n3" },
+        { "id": "fw-fund", "text": "买基金，听专家说长期主义", "delta": { "wealth": -10, "happiness": -5 }, "randomOutcomes": [
+          { "chance": 40, "label": "基金绿了，但你还活着", "delta": { "wealth": -15 } },
+          { "chance": 60, "label": "小幅回血，尝到甜头", "delta": { "wealth": 8, "happiness": 5 } }
+        ], "nextNodeId": "fw-n3" },
+        { "id": "fw-save", "text": "全部存定期，保守到底", "delta": { "wealth": 5, "happiness": 5, "career": -5 }, "nextNodeId": "fw-n3" },
+        { "id": "fw-small-biz", "text": "开奶茶店/小吃摊创业", "delta": { "career": 25, "wealth": -10, "happiness": 5 }, "nextNodeId": "fw-n3" }
+      ]
+    },
+    "fw-n3": {
+      "id": "fw-n3",
+      "age": 28,
+      "title": "同学拉你入伙「风口项目」",
+      "description": "可能是跨境电商，也可能是「AI赋能实体店」。你想起家里那300万，手指在转账页停了很久。",
+      "choices": [
+        { "id": "choice-all-in", "text": "All in，输了就当还债练习", "delta": { "career": 30, "wealth": -20, "happiness": -15 }, "randomOutcomes": [
+          { "chance": 35, "label": "项目黄了，欠上加欠", "delta": { "wealth": -30, "career": -10 } },
+          { "chance": 65, "label": "勉强活下来，学到教训", "delta": { "career": 15, "wealth": 5 } }
+        ], "nextNodeId": "fw-n4" },
+        { "id": "fw-steady", "text": "稳健合伙，只投一小部分", "delta": { "wealth": 10, "career": 15, "happiness": 5 }, "nextNodeId": "fw-n4" },
+        { "id": "fw-quit", "text": "不投，老老实实打工", "delta": { "career": -5, "wealth": 8, "happiness": 10 }, "nextNodeId": "fw-n4" }
+      ]
+    },
+    "fw-n4": {
+      "id": "fw-n4",
+      "age": 35,
+      "title": "中年危机：房贷、父母、自己",
+      "description": "行业裁员新闻刷屏，你刷到「35岁转型AI月入3万」的帖子，也看到考公报名人数再创新高。",
+      "flavor": "穷人开局有机会逆袭——选对接口",
+      "isFinale": true,
+      "choices": [
+        { "id": "choice-ai-pivot", "text": "转型学AI，做应用/提示词工程", "delta": { "career": 35, "wealth": 20, "happiness": 5 }, "endingId": "ai-rising" },
+        { "id": "choice-civil-service", "text": "全职备考公务员", "delta": { "career": 20, "wealth": 10, "happiness": 15, "love": 5 }, "endingId": "civil-servant" },
+        { "id": "choice-self-media", "text": "做自媒体，讲逆袭与避坑", "delta": { "career": 25, "wealth": 15, "happiness": 10 }, "endingId": "media-mogul" },
+        { "id": "fw-lying-flat", "text": "降低欲望，与负债和解", "delta": { "happiness": 20, "career": -15, "wealth": -5 }, "endingId": "lying-flat" }
+      ]
+    }
+  }
+}

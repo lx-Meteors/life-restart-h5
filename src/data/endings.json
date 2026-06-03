@@ -1,0 +1,240 @@
+[
+  {
+    "id": "ai-rising",
+    "title": "AI新贵",
+    "summary": "你踩中了时代节奏，成为新一代科技新贵。",
+    "emoji": "🤖",
+    "matchRules": { "priority": 80, "minAttributes": { "career": 75, "wealth": 70 }, "requiredChoices": ["choice-ai-pivot", "choice-ai-startup"] }
+  },
+  {
+    "id": "wealth-freedom",
+    "title": "财富自由",
+    "summary": "35岁宣布退休，朋友圈配图马尔代夫。",
+    "emoji": "🏝️",
+    "matchRules": { "priority": 85, "minAttributes": { "wealth": 85, "happiness": 60 } }
+  },
+  {
+    "id": "rich-wife-husband",
+    "title": "富婆赘婿",
+    "summary": "你接受了那段关系，人生少奋斗二十年——但舆论从未缺席。",
+    "emoji": "💍",
+    "matchRules": { "priority": 90, "identityIds": ["underdog"], "requiredChoices": ["ud-accept-rich"] }
+  },
+  {
+    "id": "self-made-hero",
+    "title": "自尊逆袭",
+    "summary": "你拒绝了捷径，靠自己的路证明了「屌丝」也能翻盘。",
+    "emoji": "🔥",
+    "matchRules": { "priority": 88, "identityIds": ["underdog"], "requiredChoices": ["ud-reject-rich"], "minAttributes": { "career": 65 } }
+  },
+  {
+    "id": "mortgage-slave",
+    "title": "房奴人生",
+    "summary": "月供占收入一半，你成了银行最稳定的合作伙伴。",
+    "emoji": "🏠",
+    "matchRules": { "priority": 75, "requiredChoices": ["choice-buy-house"], "maxAttributes": { "happiness": 55 } }
+  },
+  {
+    "id": "crypto-legend",
+    "title": "币圈传奇",
+    "summary": "那一波行情让你财富自由，虽然你再也不敢看K线。",
+    "emoji": "₿",
+    "matchRules": { "priority": 92, "requiredChoices": ["choice-buy-crypto-win"] }
+  },
+  {
+    "id": "crypto-rekt",
+    "title": "币圈韭菜",
+    "summary": "合约爆仓那晚，你终于理解了「风险」两个字的重量。",
+    "emoji": "📉",
+    "matchRules": { "priority": 91, "requiredChoices": ["choice-buy-crypto-lose"] }
+  },
+  {
+    "id": "startup-failed",
+    "title": "创业失败",
+    "summary": "公司清算那天，你学会了比成功更重要的东西。",
+    "emoji": "💸",
+    "matchRules": { "priority": 70, "maxAttributes": { "wealth": 30, "career": 40 }, "requiredChoices": ["choice-all-in"] }
+  },
+  {
+    "id": "workaholic-king",
+    "title": "打工皇帝",
+    "summary": "年薪百万，体检红灯也百万，你用健康换了职级。",
+    "emoji": "👔",
+    "matchRules": { "priority": 72, "identityIds": ["worker"], "minAttributes": { "career": 80, "wealth": 70 }, "maxAttributes": { "happiness": 45 } }
+  },
+  {
+    "id": "happy-ordinary",
+    "title": "幸福普通人",
+    "summary": "没有传奇，但有晚饭和周末，这已经很奢侈。",
+    "emoji": "☕",
+    "matchRules": { "priority": 50, "minAttributes": { "happiness": 65, "love": 60 }, "maxAttributes": { "wealth": 65 } }
+  },
+  {
+    "id": "top-entrepreneur",
+    "title": "顶级企业家",
+    "summary": "你建立起属于自己的商业版图，名字出现在财经头条。",
+    "emoji": "🏢",
+    "matchRules": { "priority": 86, "minAttributes": { "wealth": 80, "career": 85 } }
+  },
+  {
+    "id": "lying-flat",
+    "title": "躺平大师",
+    "summary": "你拒绝了内卷，在低欲望里找到了内心平静。",
+    "emoji": "🛋️",
+    "matchRules": { "priority": 65, "maxAttributes": { "career": 45, "wealth": 50 }, "minAttributes": { "happiness": 55 } }
+  },
+  {
+    "id": "civil-servant",
+    "title": "体制上岸",
+    "summary": "考公上岸那天，全家群发了红包雨。",
+    "emoji": "📋",
+    "matchRules": { "priority": 78, "requiredChoices": ["choice-civil-service"] }
+  },
+  {
+    "id": "influencer-fall",
+    "title": "塌房网红",
+    "summary": "热搜爆了，品牌解约，你学会了沉默成本。",
+    "emoji": "💥",
+    "matchRules": { "priority": 84, "identityIds": ["influencer"], "requiredChoices": ["if-scandal"], "maxAttributes": { "career": 40 } }
+  },
+  {
+    "id": "scholar-burnout",
+    "title": "学霸陨落",
+    "summary": "学历光环褪去，你发现社会卷的是另一套规则。",
+    "emoji": "😮‍💨",
+    "matchRules": { "priority": 76, "identityIds": ["scholar"], "maxAttributes": { "career": 45, "happiness": 40 } }
+  },
+  {
+    "id": "second-gen-fall",
+    "title": "豪门跌落",
+    "summary": "家族企业危机波及到你，最强开局也经不住时代一击。",
+    "emoji": "⬇️",
+    "matchRules": { "priority": 87, "identityIds": ["privileged"], "maxAttributes": { "wealth": 40, "career": 50 } }
+  },
+  {
+    "id": "inherit-empire",
+    "title": "继承商业帝国",
+    "summary": "你接班顺利，父辈的江山在你手里延续。",
+    "emoji": "👑",
+    "matchRules": { "priority": 89, "identityIds": ["privileged"], "requiredChoices": ["pv-take-over"], "minAttributes": { "wealth": 75, "career": 70 } }
+  },
+  {
+    "id": "listed-tycoon",
+    "title": "上市富豪",
+    "summary": "敲钟那天，你明白资本游戏才刚开始。",
+    "emoji": "🔔",
+    "matchRules": { "priority": 90, "identityIds": ["privileged"], "requiredChoices": ["pv-ipo-yes"], "minAttributes": { "wealth": 85 } }
+  },
+  {
+    "id": "livestream-star",
+    "title": "带货顶流",
+    "summary": "直播间GMV破亿，你成了新一代「销冠」。",
+    "emoji": "🎤",
+    "matchRules": { "priority": 82, "requiredChoices": ["choice-livestream"] }
+  },
+  {
+    "id": "e-commerce-king",
+    "title": "电商之王",
+    "summary": "你的店铺成为类目TOP，供应链就是你的护城河。",
+    "emoji": "🛒",
+    "matchRules": { "priority": 81, "requiredChoices": ["choice-ecommerce"] }
+  },
+  {
+    "id": "restaurant-boss",
+    "title": "餐饮大亨",
+    "summary": "从一家小店到连锁品牌，味蕾改变了你的命运。",
+    "emoji": "🍜",
+    "matchRules": { "priority": 79, "requiredChoices": ["choice-restaurant"] }
+  },
+  {
+    "id": "ai-bubble-burst",
+    "title": "AI泡沫破裂",
+    "summary": "融资断了，风口过了，你带着经验重新出发。",
+    "emoji": "🫧",
+    "matchRules": { "priority": 83, "identityIds": ["ai-founder"], "maxAttributes": { "wealth": 35 }, "requiredChoices": ["ai-all-in-fail"] }
+  },
+  {
+    "id": "romance-winner",
+    "title": "爱情赢家",
+    "summary": "你赌对了爱情，事业财富也跟着开挂。",
+    "emoji": "💑",
+    "matchRules": { "priority": 77, "identityIds": ["romantic"], "minAttributes": { "love": 80, "happiness": 70 } }
+  },
+  {
+    "id": "romance-loser",
+    "title": "情场失意",
+    "summary": "你把爱情放在第一位，最后第一位离开的也是爱情。",
+    "emoji": "💔",
+    "matchRules": { "priority": 74, "identityIds": ["romantic"], "maxAttributes": { "love": 40, "happiness": 45 } }
+  },
+  {
+    "id": "viral-one-hit",
+    "title": "一夜爆红又凉",
+    "summary": "流量来了又走，你学会了与平凡相处。",
+    "emoji": "⚡",
+    "matchRules": { "priority": 73, "identityIds": ["influencer"], "maxAttributes": { "career": 55, "wealth": 50 } }
+  },
+  {
+    "id": "side-hustle-free",
+    "title": "副业自由",
+    "summary": "主业摸鱼，副业暴富，打工人的终极幻想成真。",
+    "emoji": "🌙",
+    "matchRules": { "priority": 71, "identityIds": ["worker"], "requiredChoices": ["wk-side-hustle"], "minAttributes": { "wealth": 70 } }
+  },
+  {
+    "id": "996-burnout",
+    "title": "过劳打工人",
+    "summary": "你升到了P8，但凌晨三点的医院走廊更熟悉。",
+    "emoji": "🏥",
+    "matchRules": { "priority": 68, "identityIds": ["worker"], "requiredChoices": ["wk-stay-996"], "maxAttributes": { "happiness": 35 } }
+  },
+  {
+    "id": "family-debt",
+    "title": "负债继承",
+    "summary": "父母的债成了你的起点，你在泥泞里学会了坚韧。",
+    "emoji": "⛓️",
+    "matchRules": { "priority": 69, "identityIds": ["fallen-wealthy"], "maxAttributes": { "wealth": 25 }, "requiredChoices": ["fw-buy-house"] }
+  },
+  {
+    "id": "study-abroad-elite",
+    "title": "留学精英",
+    "summary": "海外履历加持，你走出了一条精英路线。",
+    "emoji": "🎓",
+    "matchRules": { "priority": 80, "requiredChoices": ["pv-study-abroad"] }
+  },
+  {
+    "id": "media-mogul",
+    "title": "自媒体大佬",
+    "summary": "你从内容创作者成长为真正的媒体创业者。",
+    "emoji": "📹",
+    "matchRules": { "priority": 77, "requiredChoices": ["choice-self-media"] }
+  },
+  {
+    "id": "travel-influencer",
+    "title": "环球博主",
+    "summary": "你用镜头记录世界，粉丝为你买单诗和远方。",
+    "emoji": "✈️",
+    "matchRules": { "priority": 75, "requiredChoices": ["choice-travel-world"] }
+  },
+  {
+    "id": "professor-path",
+    "title": "学术大牛",
+    "summary": "你选择了学术道路，论文比工资更让你兴奋。",
+    "emoji": "🔬",
+    "matchRules": { "priority": 79, "identityIds": ["scholar"], "requiredChoices": ["sc-phd-path"], "minAttributes": { "career": 70 } }
+  },
+  {
+    "id": "ai-startup-unicorn",
+    "title": "AI独角兽创始人",
+    "summary": "你的AI公司在B轮后成为行业黑马。",
+    "emoji": "🦄",
+    "matchRules": { "priority": 93, "identityIds": ["ai-founder"], "minAttributes": { "wealth": 75, "career": 80 }, "requiredChoices": ["ai-product-success"] }
+  },
+  {
+    "id": "happy-ordinary-fallback",
+    "title": "普通人的小确幸",
+    "summary": "人生没拍成爽剧，但每天都有小确幸。",
+    "emoji": "🌤️",
+    "matchRules": { "priority": 10 }
+  }
+]

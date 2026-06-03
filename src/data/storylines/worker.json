@@ -1,0 +1,53 @@
+{
+  "identityId": "worker",
+  "nodes": {
+    "wk-n1": {
+      "id": "wk-n1",
+      "age": 24,
+      "title": "第一年大厂：荣耀与体检",
+      "description": "入职照发朋友圈，三个月后背痛去骨科。Leader说「年轻人多扛扛」。",
+      "choices": [
+        { "id": "wk-stay-996", "text": "拼命卷，争取晋升", "delta": { "career": 30, "wealth": 20, "happiness": -20 }, "nextNodeId": "wk-n2" },
+        { "id": "wk-balance", "text": "到点走，身体第一", "delta": { "career": -10, "happiness": 20, "love": 10 }, "nextNodeId": "wk-n2" },
+        { "id": "wk-side-hustle", "text": "主业摸鱼，搞副业", "delta": { "career": 10, "wealth": 15, "happiness": 5 }, "nextNodeId": "wk-n2" }
+      ]
+    },
+    "wk-n2": {
+      "id": "wk-n2",
+      "age": 28,
+      "title": "期权/股票能财富自由吗？",
+      "description": "公司传闻要上市，也可能裁员30%。你看着房贷计算器发呆。",
+      "choices": [
+        { "id": "choice-buy-house", "text": "高位买房，相信公司会上市", "delta": { "wealth": -20, "happiness": 10 }, "nextNodeId": "wk-n3" },
+        { "id": "wk-hold-stock", "text": "不卖期权，赌一把", "delta": { "wealth": 15, "career": 10 }, "randomOutcomes": [
+          { "chance": 40, "label": "公司上市，期权变现", "delta": { "wealth": 40, "happiness": 20 } },
+          { "chance": 60, "label": "期权缩水，白干三年", "delta": { "wealth": -15, "happiness": -15 } }
+        ], "nextNodeId": "wk-n3" },
+        { "id": "wk-quit-startup", "text": "辞职去创业公司", "delta": { "career": 25, "wealth": -10, "happiness": 10 }, "nextNodeId": "wk-n3" }
+      ]
+    },
+    "wk-n3": {
+      "id": "wk-n3",
+      "age": 32,
+      "title": "35岁危机提前到来",
+      "description": "招聘软件上写「35岁以下」。你开始研究考公、AI、自媒体。",
+      "choices": [
+        { "id": "choice-ai-pivot", "text": "转型AI应用开发", "delta": { "career": 35, "wealth": 25 }, "nextNodeId": "wk-n4" },
+        { "id": "wk-stay-corp", "text": "赖在大厂直到被裁", "delta": { "career": 15, "wealth": 15, "happiness": -15 }, "nextNodeId": "wk-n4" },
+        { "id": "choice-self-media", "text": "职场博主，吐槽大厂", "delta": { "career": 20, "wealth": 15, "happiness": 10 }, "nextNodeId": "wk-n4" }
+      ]
+    },
+    "wk-n4": {
+      "id": "wk-n4",
+      "age": 35,
+      "title": "打工人的终局选择",
+      "isFinale": true,
+      "choices": [
+        { "id": "wk-end-rich", "text": "年薪百万但体检红灯", "delta": { "wealth": 35, "career": 25, "happiness": -20 }, "endingId": "workaholic-king" },
+        { "id": "wk-end-free", "text": "副业超过主业，提离职", "delta": { "wealth": 30, "happiness": 30 }, "endingId": "side-hustle-free" },
+        { "id": "wk-end-ai", "text": "AI赛道站稳脚跟", "delta": { "career": 30, "wealth": 25 }, "endingId": "ai-rising" },
+        { "id": "wk-end-flat", "text": "被裁后躺平，低欲望生活", "delta": { "happiness": 25, "career": -20 }, "endingId": "lying-flat" }
+      ]
+    }
+  }
+}

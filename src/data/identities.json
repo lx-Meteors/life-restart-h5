@@ -1,0 +1,90 @@
+[
+  {
+    "id": "fallen-wealthy",
+    "name": "家道中落",
+    "emoji": "📉",
+    "tagline": "高位买房 + 炒股踩坑，负债300万",
+    "background": "父母2019年高位接盘学区房，又重仓白酒股。房地产下行+股市回调，家庭资产一夜缩水，背上300万房贷与消费贷。",
+    "contrast": "开局地狱，但逆袭剧本也可能在你身上上演",
+    "initialAttributes": { "wealth": 15, "career": 35, "love": 45, "happiness": 30 },
+    "startNodeId": "fw-n1",
+    "color": "#e74c3c"
+  },
+  {
+    "id": "underdog",
+    "name": "屌丝逆袭",
+    "emoji": "🚀",
+    "tagline": "月薪3000，租房，等待命运转折",
+    "background": "普通家庭出身，大专毕业，在奶茶店打工转正后月薪3000，合租老破小，朋友圈全是「搞钱」鸡汤。",
+    "contrast": "接受富婆 vs 拒绝富婆，人生走向完全不同",
+    "initialAttributes": { "wealth": 20, "career": 25, "love": 40, "happiness": 45 },
+    "startNodeId": "ud-n1",
+    "color": "#f39c12"
+  },
+  {
+    "id": "privileged",
+    "name": "天胡开局",
+    "emoji": "👑",
+    "tagline": "出生就是总裁预备役",
+    "background": "父亲上市公司实控人，你从小读国际学校，身边全是「资源」——但豪门也有豪门的烦恼。",
+    "contrast": "最强开局也可能跌落神坛",
+    "initialAttributes": { "wealth": 90, "career": 70, "love": 55, "happiness": 60 },
+    "startNodeId": "pv-n1",
+    "color": "#9b59b6"
+  },
+  {
+    "id": "scholar",
+    "name": "学霸人生",
+    "emoji": "📚",
+    "tagline": "常年第一，全家的希望",
+    "background": "县城状元，985本硕连读预定，亲戚过年都问你「以后当教授还是进部委」。",
+    "contrast": "学霸也可能被AI时代淘汰",
+    "initialAttributes": { "wealth": 40, "career": 75, "love": 35, "happiness": 50 },
+    "startNodeId": "sc-n1",
+    "color": "#3498db"
+  },
+  {
+    "id": "worker",
+    "name": "打工人人生",
+    "emoji": "💼",
+    "tagline": "大厂996，咖啡续命",
+    "background": "普通一本，校招进互联网大厂，工牌是面子，体检报告是里子。",
+    "contrast": "打工人也可能35岁财务自由",
+    "initialAttributes": { "wealth": 45, "career": 55, "love": 40, "happiness": 35 },
+    "startNodeId": "wk-n1",
+    "color": "#1abc9c"
+  },
+  {
+    "id": "influencer",
+    "name": "网红人生",
+    "emoji": "📱",
+    "tagline": "一条视频爆了，粉丝百万",
+    "background": "拍了一条「职场吐槽」意外破圈，品牌方私信塞满，妈妈终于回你微信了。",
+    "contrast": "爆红之后可能是塌房",
+    "initialAttributes": { "wealth": 55, "career": 60, "love": 50, "happiness": 65 },
+    "startNodeId": "if-n1",
+    "color": "#e91e63"
+  },
+  {
+    "id": "romantic",
+    "name": "恋爱脑人生",
+    "emoji": "💕",
+    "tagline": "爱情第一位，其他随缘",
+    "background": "你的人生KPI是「他/她回消息了吗」，可以为约会翘班，可以为爱情换城市。",
+    "contrast": "恋爱脑也能清醒逆袭，也可能一无所有",
+    "initialAttributes": { "wealth": 35, "career": 30, "love": 85, "happiness": 55 },
+    "startNodeId": "rm-n1",
+    "color": "#ff6b9d"
+  },
+  {
+    "id": "ai-founder",
+    "name": "AI创业人生",
+    "emoji": "🤖",
+    "tagline": "2026 all in AI，抓住时代红利",
+    "background": "辞职加入AI创业浪潮，BP里全是「大模型」「Agent」「赋能」，投资人问你「商业模式呢」。",
+    "contrast": "风口上的猪，也可能摔得最惨",
+    "initialAttributes": { "wealth": 35, "career": 50, "love": 40, "happiness": 55 },
+    "startNodeId": "ai-n1",
+    "color": "#00d2ff"
+  }
+]

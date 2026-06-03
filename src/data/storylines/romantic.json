@@ -1,0 +1,50 @@
+{
+  "identityId": "romantic",
+  "nodes": {
+    "rm-n1": {
+      "id": "rm-n1",
+      "age": 22,
+      "title": "异地恋还是跟着TA走？",
+      "description": "对方拿到外地offer，希望你一起去。你妈说「恋爱不能当饭吃」。",
+      "choices": [
+        { "id": "rm-follow-love", "text": "爱情至上，一起去", "delta": { "love": 30, "career": -20, "wealth": -10 }, "nextNodeId": "rm-n2" },
+        { "id": "rm-stay-job", "text": "留下搞事业，异地维持", "delta": { "career": 25, "love": -15, "happiness": -5 }, "nextNodeId": "rm-n2" },
+        { "id": "rm-break", "text": "分手，专心提升自己", "delta": { "love": -25, "career": 20, "happiness": 5 }, "nextNodeId": "rm-n2" }
+      ]
+    },
+    "rm-n2": {
+      "id": "rm-n2",
+      "age": 26,
+      "title": "TA出轨传闻，你信吗？",
+      "description": "闺蜜发来截图，TA说「只是同事」。你恋爱脑和理智在打架。",
+      "choices": [
+        { "id": "rm-forgive", "text": "选择相信，继续谈", "delta": { "love": 20, "happiness": -15 }, "nextNodeId": "rm-n3" },
+        { "id": "rm-investigate", "text": "查清楚再决定", "delta": { "love": -10, "happiness": -10, "career": 5 }, "nextNodeId": "rm-n3" },
+        { "id": "rm-leave-toxic", "text": "立刻分手止损", "delta": { "love": -20, "happiness": 20, "career": 15 }, "nextNodeId": "rm-n3" }
+      ]
+    },
+    "rm-n3": {
+      "id": "rm-n3",
+      "age": 30,
+      "title": "结婚压力：房子、彩礼、父母",
+      "description": "对方家要房要车；你家拿不出来。爱情在房产证面前发抖。",
+      "choices": [
+        { "id": "rm-marry-rich", "text": "找家里啃老/借钱结婚", "delta": { "love": 25, "wealth": -30, "happiness": -10 }, "nextNodeId": "rm-n4" },
+        { "id": "rm-delay", "text": "推迟结婚，先攒钱", "delta": { "wealth": 20, "love": -10, "career": 15 }, "nextNodeId": "rm-n4" },
+        { "id": "rm-solo", "text": "不结了，单身搞钱", "delta": { "love": -15, "career": 25, "happiness": 15 }, "nextNodeId": "rm-n4" }
+      ]
+    },
+    "rm-n4": {
+      "id": "rm-n4",
+      "age": 35,
+      "title": "恋爱脑的结局时刻",
+      "isFinale": true,
+      "choices": [
+        { "id": "rm-happy-family", "text": "爱情事业双丰收", "delta": { "love": 25, "happiness": 25, "wealth": 15 }, "endingId": "romance-winner" },
+        { "id": "rm-heartbreak", "text": "人财两空，但看清了", "delta": { "love": -30, "happiness": -20 }, "endingId": "romance-loser" },
+        { "id": "rm-career-first", "text": "醒悟后专注事业", "delta": { "career": 35, "love": 5 }, "endingId": "top-entrepreneur" },
+        { "id": "rm-ordinary-love", "text": "平淡夫妻，小确幸", "delta": { "love": 20, "happiness": 25 }, "endingId": "happy-ordinary" }
+      ]
+    }
+  }
+}

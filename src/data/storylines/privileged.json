@@ -1,0 +1,42 @@
+{
+  "identityId": "privileged",
+  "nodes": {
+    "pv-n1": {
+      "id": "pv-n1",
+      "age": 18,
+      "title": "毕业，父辈等你接班",
+      "description": "私人宴会上，叔叔们讨论市值管理；你刷到同龄人在小红书晒Gap Year。",
+      "flavor": "天胡开局也可能跌落——选错一步就是热搜",
+      "choices": [
+        { "id": "pv-study-abroad", "text": "留学镀金，回来更有话语权", "delta": { "career": 25, "wealth": -15, "happiness": 15 }, "nextNodeId": "pv-n2" },
+        { "id": "pv-take-over", "text": "直接进公司，从基层管培做起", "delta": { "career": 30, "wealth": 10, "happiness": -5 }, "nextNodeId": "pv-n2" },
+        { "id": "pv-startup-dad", "text": "拿家里钱自己创业，要证明能力", "delta": { "career": 20, "wealth": -20, "happiness": 20 }, "nextNodeId": "pv-n2" }
+      ]
+    },
+    "pv-n2": {
+      "id": "pv-n2",
+      "age": 26,
+      "title": "家族企业遭遇行业危机",
+      "description": "政策+竞争双重挤压，财报不好看。董事会吵是否裁员、转型还是融资补血。",
+      "choices": [
+        { "id": "pv-layoff", "text": "大刀裁员，保利润", "delta": { "wealth": 15, "career": 10, "happiness": -20, "love": -10 }, "nextNodeId": "pv-n3" },
+        { "id": "pv-transform", "text": "转型新业务线（含AI）", "delta": { "career": 35, "wealth": -10, "happiness": 5 }, "nextNodeId": "pv-n3" },
+        { "id": "pv-funding", "text": "引入战略投资，稀释股权", "delta": { "wealth": 20, "career": 15, "happiness": -5 }, "nextNodeId": "pv-n3" }
+      ]
+    },
+    "pv-n3": {
+      "id": "pv-n3",
+      "age": 32,
+      "title": "是否推动公司上市？",
+      "description": "投行在门外排队，也有家族长辈说「上市了就没了退路」。",
+      "flavor": "富人跌落 or 更强——全在这一敲钟",
+      "isFinale": true,
+      "choices": [
+        { "id": "pv-ipo-yes", "text": "上市，财富证券化", "delta": { "wealth": 30, "career": 25, "happiness": -10 }, "endingId": "listed-tycoon" },
+        { "id": "pv-ipo-no", "text": "不上市，低调经营", "delta": { "wealth": 10, "happiness": 25, "love": 15 }, "endingId": "happy-ordinary" },
+        { "id": "pv-ipo-fail", "text": "硬上IPO，遇黑天鹅", "delta": { "wealth": -40, "career": -20, "happiness": -25 }, "endingId": "second-gen-fall" },
+        { "id": "pv-give-up", "text": "变卖资产，换个活法", "delta": { "wealth": -30, "happiness": 30, "career": -15 }, "endingId": "lying-flat" }
+      ]
+    }
+  }
+}

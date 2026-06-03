@@ -1,0 +1,50 @@
+{
+  "identityId": "influencer",
+  "nodes": {
+    "if-n1": {
+      "id": "if-n1",
+      "age": 23,
+      "title": "爆火之后，第一条商务来了",
+      "description": "品牌方报价让你怀疑人生。评论区开始有人扒你旧照。",
+      "flavor": "网红开局：可能塌房，也可能长红",
+      "choices": [
+        { "id": "if-take-all-ads", "text": "什么单都接，先变现", "delta": { "wealth": 30, "career": 15, "happiness": -10 }, "nextNodeId": "if-n2" },
+        { "id": "if-picky", "text": "精挑细选，立人设", "delta": { "career": 25, "wealth": 10, "happiness": 10 }, "nextNodeId": "if-n2" },
+        { "id": "if-mcN", "text": "签约MCN，交给专业团队", "delta": { "career": 20, "wealth": 15, "love": -5 }, "nextNodeId": "if-n2" }
+      ]
+    },
+    "if-n2": {
+      "id": "if-n2",
+      "age": 26,
+      "title": "直播带货还是内容精品化？",
+      "choices": [
+        { "id": "choice-livestream", "text": "全职直播带货", "delta": { "wealth": 35, "career": 25, "happiness": -5 }, "nextNodeId": "if-n3" },
+        { "id": "if-quality", "text": "慢工出细活，拍纪录片风", "delta": { "career": 30, "wealth": -10, "happiness": 20 }, "nextNodeId": "if-n3" },
+        { "id": "if-scandal-risk", "text": "接争议产品，佣金翻倍", "delta": { "wealth": 40, "career": -15 }, "nextNodeId": "if-n3" }
+      ]
+    },
+    "if-n3": {
+      "id": "if-n3",
+      "age": 29,
+      "title": "黑料上热搜了",
+      "description": "可能是早年言论，也可能是合作方暴雷。公关费报价六位起。",
+      "choices": [
+        { "id": "if-scandal", "text": "冷处理，结果越闹越大", "delta": { "career": -35, "wealth": -25, "happiness": -30 }, "nextNodeId": "if-n4" },
+        { "id": "if-apologize", "text": "直播道歉，暂时退网", "delta": { "career": -15, "happiness": -10, "love": 5 }, "nextNodeId": "if-n4" },
+        { "id": "if-legal", "text": "硬刚造谣，走法律程序", "delta": { "career": 10, "wealth": -15 }, "nextNodeId": "if-n4" }
+      ]
+    },
+    "if-n4": {
+      "id": "if-n4",
+      "age": 32,
+      "title": "流量时代的一课",
+      "isFinale": true,
+      "choices": [
+        { "id": "if-comeback", "text": "复出，转型正能量", "delta": { "career": 25, "happiness": 10 }, "endingId": "livestream-star" },
+        { "id": "if-fall-end", "text": "彻底凉透，回归素人", "delta": { "career": -25, "happiness": 15 }, "endingId": "influencer-fall" },
+        { "id": "if-business", "text": "幕后做MCN老板", "delta": { "wealth": 30, "career": 35 }, "endingId": "top-entrepreneur" },
+        { "id": "if-one-hit", "text": "偶尔接点小广告，维持生活", "delta": { "happiness": 20, "wealth": 5 }, "endingId": "viral-one-hit" }
+      ]
+    }
+  }
+}

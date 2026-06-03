@@ -5,36 +5,56 @@
       "id": "pv-n1",
       "age": 18,
       "title": "毕业，父辈等你接班",
-      "description": "私人宴会上，叔叔们讨论市值管理；你刷到同龄人在小红书晒Gap Year。",
-      "flavor": "天胡开局也可能跌落——选错一步就是热搜",
+      "description": "私人宴会上叔叔们讨论市值；你刷到同龄人Gap Year的小红书。",
       "choices": [
-        { "id": "pv-study-abroad", "text": "留学镀金，回来更有话语权", "delta": { "career": 25, "wealth": -15, "happiness": 15 }, "nextNodeId": "pv-n2" },
-        { "id": "pv-take-over", "text": "直接进公司，从基层管培做起", "delta": { "career": 30, "wealth": 10, "happiness": -5 }, "nextNodeId": "pv-n2" },
-        { "id": "pv-startup-dad", "text": "拿家里钱自己创业，要证明能力", "delta": { "career": 20, "wealth": -20, "happiness": 20 }, "nextNodeId": "pv-n2" }
+        { "id": "pv-study-abroad", "text": "留学镀金，回来更有话语权", "delta": { "career": 25, "wealth": -15, "happiness": 15 }, "nextNodeId": "pv-n2u" },
+        { "id": "pv-take-over", "text": "直接进公司，从管培做起", "delta": { "career": 30, "wealth": 10, "happiness": -5 }, "nextNodeId": "pv-n2c" },
+        { "id": "pv-startup-dad", "text": "拿家里钱创业，证明自己", "delta": { "career": 20, "wealth": -20, "happiness": 20 }, "nextNodeId": "pv-n2s" }
       ]
     },
-    "pv-n2": {
-      "id": "pv-n2",
-      "age": 26,
-      "title": "家族企业遭遇行业危机",
-      "description": "政策+竞争双重挤压，财报不好看。董事会吵是否裁员、转型还是融资补血。",
+    "pv-n2u": {
+      "id": "pv-n2u",
+      "age": 22,
+      "title": "留学第二年，家里企业暴雷上新闻",
+      "description": "爸的电话从每周一次变成每天三次。同学讨论实习，你在想学费下一笔在哪。",
+      "flavor": "承接：你选了留学，危机来时你在海外",
       "choices": [
-        { "id": "pv-layoff", "text": "大刀裁员，保利润", "delta": { "wealth": 15, "career": 10, "happiness": -20, "love": -10 }, "nextNodeId": "pv-n3" },
-        { "id": "pv-transform", "text": "转型新业务线（含AI）", "delta": { "career": 35, "wealth": -10, "happiness": 5 }, "nextNodeId": "pv-n3" },
-        { "id": "pv-funding", "text": "引入战略投资，稀释股权", "delta": { "wealth": 20, "career": 15, "happiness": -5 }, "nextNodeId": "pv-n3" }
+        { "id": "pv-abroad-back", "text": "休学回国，进公司帮忙", "delta": { "career": 20, "happiness": -10, "wealth": -10 }, "nextNodeId": "pv-n3" },
+        { "id": "pv-abroad-stay", "text": "读完学位再回，赌家族能撑住", "delta": { "career": 30, "happiness": 5, "love": -10 }, "nextNodeId": "pv-n3" }
+      ]
+    },
+    "pv-n2c": {
+      "id": "pv-n2c",
+      "age": 22,
+      "title": "管培第一年，董事会撕逼裁员",
+      "description": "叔公拍桌子要砍你负责的部门。爸说：「你要学会狠，不然接班是笑话。」",
+      "flavor": "承接：你选了接班路线，危机就在脚下",
+      "choices": [
+        { "id": "pv-layoff", "text": "执行裁员，保利润表好看", "delta": { "wealth": 15, "career": 10, "happiness": -20, "love": -10 }, "nextNodeId": "pv-n3" },
+        { "id": "pv-transform", "text": "砍传统线，押注AI转型", "delta": { "career": 35, "wealth": -10, "happiness": 5 }, "nextNodeId": "pv-n3" }
+      ]
+    },
+    "pv-n2s": {
+      "id": "pv-n2s",
+      "age": 22,
+      "title": "自己的公司第一年，爸的资金链断了",
+      "description": "投资人问你「跟家族企业什么关系」。员工工资下个月还没着落。",
+      "flavor": "承接：你选了独立创业，家族危机直接砸在你头上",
+      "choices": [
+        { "id": "pv-startup-merge", "text": "公司并回家族，放弃独立招牌", "delta": { "wealth": 10, "career": 15, "happiness": -15 }, "nextNodeId": "pv-n3" },
+        { "id": "pv-funding", "text": "引入外部融资，稀释自己和家族股权", "delta": { "wealth": 20, "career": 15, "happiness": -5 }, "nextNodeId": "pv-n3" }
       ]
     },
     "pv-n3": {
       "id": "pv-n3",
-      "age": 32,
-      "title": "是否推动公司上市？",
-      "description": "投行在门外排队，也有家族长辈说「上市了就没了退路」。",
-      "flavor": "富人跌落 or 更强——全在这一敲钟",
+      "age": 28,
+      "title": "家族缓过来，投行敲门谈上市",
+      "description": "敲钟意味着财富暴涨，也意味着财报透明、没有退路。长辈分成两派。",
       "isFinale": true,
       "choices": [
-        { "id": "pv-ipo-yes", "text": "上市，财富证券化", "delta": { "wealth": 30, "career": 25, "happiness": -10 }, "endingId": "listed-tycoon" },
-        { "id": "pv-ipo-no", "text": "不上市，低调经营", "delta": { "wealth": 10, "happiness": 25, "love": 15 }, "endingId": "happy-ordinary" },
-        { "id": "pv-ipo-fail", "text": "硬上IPO，遇黑天鹅", "delta": { "wealth": -40, "career": -20, "happiness": -25 }, "endingId": "second-gen-fall" },
+        { "id": "pv-ipo-yes", "text": "推动上市，财富证券化", "delta": { "wealth": 30, "career": 25, "happiness": -10 }, "endingId": "listed-tycoon" },
+        { "id": "pv-ipo-no", "text": "不上市，低调现金流经营", "delta": { "wealth": 10, "happiness": 25, "love": 15 }, "endingId": "happy-ordinary" },
+        { "id": "pv-ipo-fail", "text": "硬上IPO遇黑天鹅，股价破发", "delta": { "wealth": -40, "career": -20, "happiness": -25 }, "endingId": "second-gen-fall" },
         { "id": "pv-give-up", "text": "变卖资产，换个活法", "delta": { "wealth": -30, "happiness": 30, "career": -15 }, "endingId": "lying-flat" }
       ]
     }

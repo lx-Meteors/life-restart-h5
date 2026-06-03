@@ -7,45 +7,86 @@
       "title": "第一年大厂：荣耀与体检",
       "description": "入职照发朋友圈，三个月后背痛去骨科。Leader说「年轻人多扛扛」。",
       "choices": [
-        { "id": "wk-stay-996", "text": "拼命卷，争取晋升", "delta": { "career": 30, "wealth": 20, "happiness": -20 }, "nextNodeId": "wk-n2" },
-        { "id": "wk-balance", "text": "到点走，身体第一", "delta": { "career": -10, "happiness": 20, "love": 10 }, "nextNodeId": "wk-n2" },
-        { "id": "wk-side-hustle", "text": "主业摸鱼，搞副业", "delta": { "career": 10, "wealth": 15, "happiness": 5 }, "nextNodeId": "wk-n2" }
+        { "id": "wk-stay-996", "text": "拼命卷，争取晋升", "delta": { "career": 30, "wealth": 20, "happiness": -20 }, "nextNodeId": "wk-n2a" },
+        { "id": "wk-balance", "text": "到点走，身体第一", "delta": { "career": -10, "happiness": 20, "love": 10 }, "nextNodeId": "wk-n2b" },
+        { "id": "wk-side-hustle", "text": "主业摸鱼，搞副业", "delta": { "career": 10, "wealth": 15, "happiness": 5 }, "nextNodeId": "wk-n2c" }
       ]
     },
-    "wk-n2": {
-      "id": "wk-n2",
-      "age": 28,
-      "title": "期权/股票能财富自由吗？",
-      "description": "公司传闻要上市，也可能裁员30%。你看着房贷计算器发呆。",
+    "wk-n2a": {
+      "id": "wk-n2a",
+      "age": 26,
+      "title": "连轴加班后，体检报告亮红灯",
+      "description": "医生让你「立刻休息」。绩效季却来了，组里只有你还没提交晋升材料。",
+      "flavor": "承接：你选了卷，所以此刻在健康和晋升之间二选一",
       "choices": [
-        { "id": "choice-buy-house", "text": "高位买房，相信公司会上市", "delta": { "wealth": -20, "happiness": 10 }, "nextNodeId": "wk-n3" },
-        { "id": "wk-hold-stock", "text": "不卖期权，赌一把", "delta": { "wealth": 15, "career": 10 }, "randomOutcomes": [
-          { "chance": 40, "label": "公司上市，期权变现", "delta": { "wealth": 40, "happiness": 20 } },
-          { "chance": 60, "label": "期权缩水，白干三年", "delta": { "wealth": -15, "happiness": -15 } }
-        ], "nextNodeId": "wk-n3" },
-        { "id": "wk-quit-startup", "text": "辞职去创业公司", "delta": { "career": 25, "wealth": -10, "happiness": 10 }, "nextNodeId": "wk-n3" }
+        { "id": "wk-996-health", "text": "请病假休整，晋升让给别人", "delta": { "happiness": 25, "career": -15, "wealth": -5 }, "nextNodeId": "wk-n3a" },
+        { "id": "wk-996-push", "text": "硬撑交材料，赌一把晋升", "delta": { "career": 25, "wealth": 15, "happiness": -25 }, "nextNodeId": "wk-n3a" }
       ]
     },
-    "wk-n3": {
-      "id": "wk-n3",
-      "age": 32,
-      "title": "35岁危机提前到来",
-      "description": "招聘软件上写「35岁以下」。你开始研究考公、AI、自媒体。",
+    "wk-n2b": {
+      "id": "wk-n2b",
+      "age": 26,
+      "title": "准点下班被Leader约谈",
+      "description": "「团队需要你」。你体检正常，但年终奖系数可能垫底。",
+      "flavor": "承接：你选了平衡，所以此刻在原则和收入之间拉扯",
       "choices": [
-        { "id": "choice-ai-pivot", "text": "转型AI应用开发", "delta": { "career": 35, "wealth": 25 }, "nextNodeId": "wk-n4" },
-        { "id": "wk-stay-corp", "text": "赖在大厂直到被裁", "delta": { "career": 15, "wealth": 15, "happiness": -15 }, "nextNodeId": "wk-n4" },
-        { "id": "choice-self-media", "text": "职场博主，吐槽大厂", "delta": { "career": 20, "wealth": 15, "happiness": 10 }, "nextNodeId": "wk-n4" }
+        { "id": "wk-balance-stay", "text": "坚持不加班，接受低绩效", "delta": { "happiness": 20, "career": -10, "wealth": -8 }, "nextNodeId": "wk-n3b" },
+        { "id": "wk-balance-comp", "text": "妥协加一些班，换中等绩效", "delta": { "career": 10, "happiness": -5, "wealth": 10 }, "nextNodeId": "wk-n3b" }
+      ]
+    },
+    "wk-n2c": {
+      "id": "wk-n2c",
+      "age": 26,
+      "title": "副业收入第一次超过主业",
+      "description": "你在工位上回副业客户消息，被同事撞见。副业是跨境电商，旺季月入2万。",
+      "flavor": "承接：你选了副业，所以此刻在主业和副业之间分配精力",
+      "choices": [
+        { "id": "wk-side-focus", "text": "副业加投，主业摆烂", "delta": { "wealth": 25, "career": -5, "happiness": 10 }, "nextNodeId": "wk-n3c" },
+        { "id": "wk-side-hide", "text": "低调做，怕公司发现开除", "delta": { "wealth": 12, "career": 5, "happiness": -5 }, "nextNodeId": "wk-n3c" }
+      ]
+    },
+    "wk-n3a": {
+      "id": "wk-n3a",
+      "age": 30,
+      "title": "公司传闻要上市，你的期权能变现吗？",
+      "description": "股价波动，同事在讨论买房。你想起自己这些年的身体账单。",
+      "choices": [
+        { "id": "choice-buy-house", "text": "高位买房赌上市", "delta": { "wealth": -20, "happiness": 10 }, "nextNodeId": "wk-n4" },
+        { "id": "wk-hold-stock", "text": "不卖期权，再赌一把", "delta": { "wealth": 10 }, "randomOutcomes": [
+          { "chance": 40, "label": "上市套现，一笔横财", "delta": { "wealth": 40, "happiness": 20 } },
+          { "chance": 60, "label": "期权缩水", "delta": { "wealth": -15, "happiness": -15 } }
+        ], "nextNodeId": "wk-n4" }
+      ]
+    },
+    "wk-n3b": {
+      "id": "wk-n3b",
+      "age": 30,
+      "title": "裁员名单传闻里有你组",
+      "description": "你没卷赢，但身体还好。猎头电话多了，也有考公广告。",
+      "choices": [
+        { "id": "wk-layoff-wait", "text": "等赔偿，先休息两个月", "delta": { "happiness": 15, "wealth": 10, "career": -10 }, "nextNodeId": "wk-n4" },
+        { "id": "wk-layoff-jump", "text": "主动跳中小厂，薪资平移", "delta": { "career": 15, "wealth": 5, "happiness": -5 }, "nextNodeId": "wk-n4" }
+      ]
+    },
+    "wk-n3c": {
+      "id": "wk-n3c",
+      "age": 30,
+      "title": "副业被公司发现，HR找你谈话",
+      "description": "竞业协议摆在桌上。副业店铺刚起量，关掉很心疼。",
+      "choices": [
+        { "id": "wk-side-quit-job", "text": "辞职全职做副业", "delta": { "career": 20, "wealth": 15, "happiness": 15 }, "nextNodeId": "wk-n4" },
+        { "id": "wk-side-shut", "text": "关副业，保住大厂工牌", "delta": { "wealth": -10, "career": 10, "happiness": -20 }, "nextNodeId": "wk-n4" }
       ]
     },
     "wk-n4": {
       "id": "wk-n4",
       "age": 35,
-      "title": "打工人的终局选择",
+      "title": "35岁这道坎，你怎么过？",
       "isFinale": true,
       "choices": [
-        { "id": "wk-end-rich", "text": "年薪百万但体检红灯", "delta": { "wealth": 35, "career": 25, "happiness": -20 }, "endingId": "workaholic-king" },
-        { "id": "wk-end-free", "text": "副业超过主业，提离职", "delta": { "wealth": 30, "happiness": 30 }, "endingId": "side-hustle-free" },
-        { "id": "wk-end-ai", "text": "AI赛道站稳脚跟", "delta": { "career": 30, "wealth": 25 }, "endingId": "ai-rising" },
+        { "id": "wk-end-rich", "text": "年薪百万继续卷，体检随缘", "delta": { "wealth": 35, "career": 25, "happiness": -20 }, "endingId": "workaholic-king" },
+        { "id": "wk-end-free", "text": "副业/自由职业超过主业收入", "delta": { "wealth": 30, "happiness": 30 }, "endingId": "side-hustle-free" },
+        { "id": "choice-ai-pivot", "text": "转型AI岗：降薪20%但赛道新", "delta": { "career": 30, "wealth": 15 }, "endingId": "ai-rising" },
         { "id": "wk-end-flat", "text": "被裁后躺平，低欲望生活", "delta": { "happiness": 25, "career": -20 }, "endingId": "lying-flat" }
       ]
     }

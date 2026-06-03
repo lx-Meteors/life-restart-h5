@@ -5,36 +5,77 @@
       "id": "ai-n1",
       "age": 28,
       "title": "BP被投资人怼了第十次",
-      "description": "「你们的壁垒是什么？」你看着PPT里的「颠覆」「生态」「闭环」，沉默。",
+      "description": "「你们的壁垒是什么？」PPT里全是「颠覆」「Agent」。",
       "choices": [
-        { "id": "ai-pivot-product", "text": "砍掉虚的，做垂直小产品", "delta": { "career": 25, "wealth": -5 }, "nextNodeId": "ai-n2" },
-        { "id": "ai-keep-pitch", "text": "继续讲故事，融到钱再说", "delta": { "wealth": 20, "career": -10, "happiness": -5 }, "nextNodeId": "ai-n2" },
-        { "id": "ai-cofounder", "text": "找技术大牛合伙", "delta": { "career": 30, "love": -5 }, "nextNodeId": "ai-n2" }
+        { "id": "ai-pivot-product", "text": "砍掉虚的，做垂直小产品", "delta": { "career": 25, "wealth": -5 }, "nextNodeId": "ai-n2p" },
+        { "id": "ai-keep-pitch", "text": "继续讲故事，融到钱再说", "delta": { "wealth": 20, "career": -10, "happiness": -5 }, "nextNodeId": "ai-n2f" },
+        { "id": "ai-cofounder", "text": "找技术大牛合伙", "delta": { "career": 30, "love": -5 }, "nextNodeId": "ai-n2c" }
       ]
     },
-    "ai-n2": {
-      "id": "ai-n2",
-      "age": 30,
-      "title": "大模型API涨价，生死抉择",
-      "description": "成本翻倍，用户增长却慢。团队有人离职去大厂了。",
+    "ai-n2p": {
+      "id": "ai-n2p",
+      "age": 29,
+      "title": "产品上线，日活200，账上只够3个月",
+      "description": "用户说好用，但不付费。你白天写代码，晚上改付费墙文案。",
+      "flavor": "承接：你选了做产品，所以此刻在生死现金流里",
       "choices": [
-        { "id": "ai-all-in-fail", "text": "借钱续命，赌政策利好", "delta": { "wealth": -25, "career": 10 }, "randomOutcomes": [
-          { "chance": 45, "label": "融资断裂，团队解散", "delta": { "wealth": -20, "career": -15, "happiness": -25 } },
+        { "id": "ai-product-success", "text": "改企业付费版，放弃C端", "delta": { "wealth": 25, "career": 30 }, "nextNodeId": "ai-n3p" },
+        { "id": "ai-all-in-fail", "text": "借钱买量，赌增长", "delta": { "wealth": -25, "career": 10 }, "randomOutcomes": [
+          { "chance": 45, "label": "烧钱无果，团队解散", "delta": { "wealth": -20, "career": -15, "happiness": -25 } },
           { "chance": 55, "label": "拿到天使续命", "delta": { "wealth": 15, "career": 20 } }
-        ], "nextNodeId": "ai-n3" },
-        { "id": "ai-product-success", "text": "改做企业付费版", "delta": { "wealth": 25, "career": 30 }, "nextNodeId": "ai-n3" },
-        { "id": "ai-acquihire", "text": "被大厂收购，团队并入", "delta": { "wealth": 35, "career": 15, "happiness": 10 }, "nextNodeId": "ai-n3" }
+        ], "nextNodeId": "ai-n3p" }
       ]
     },
-    "ai-n3": {
-      "id": "ai-n3",
-      "age": 33,
-      "title": "Agent浪潮，跟还是不跟？",
-      "description": "竞品一周一个demo，你在朋友圈发「深耕场景」。",
+    "ai-n2f": {
+      "id": "ai-n2f",
+      "age": 29,
+      "title": "融到500万，投资人要你看GMV",
+      "description": "办公室换了，但产品还是demo。CTO问你下周能不能上线。",
+      "flavor": "承接：你选了先融资，所以此刻在被催交付",
+      "choices": [
+        { "id": "ai-fund-hire", "text": "疯狂招人扩团队", "delta": { "wealth": -15, "career": 20, "happiness": -10 }, "nextNodeId": "ai-n3f" },
+        { "id": "ai-fund-focus", "text": "小团队快迭代，控制burn", "delta": { "career": 25, "wealth": 5 }, "nextNodeId": "ai-n3f" }
+      ]
+    },
+    "ai-n2c": {
+      "id": "ai-n2c",
+      "age": 29,
+      "title": "合伙人和你在股权上谈崩",
+      "description": "他贡献了核心模型；你贡献了客户和BP。律师说「越早谈清楚越好」。",
+      "flavor": "承接：你选了找合伙，所以此刻在股权博弈里",
+      "choices": [
+        { "id": "ai-cofounder-fair", "text": "让出30%股权，保住人", "delta": { "career": 25, "happiness": 10, "wealth": -10 }, "nextNodeId": "ai-n3c" },
+        { "id": "ai-cofounder-fight", "text": "坚持控股，赌他离不开", "delta": { "career": 10, "happiness": -20, "love": -10 }, "nextNodeId": "ai-n3c" }
+      ]
+    },
+    "ai-n3p": {
+      "id": "ai-n3p",
+      "age": 32,
+      "title": "B轮路演，Agent浪潮来了",
+      "description": "竞品一周一个demo。投资人问你「和ChatGPT差异在哪」。",
       "choices": [
         { "id": "choice-ai-startup", "text": "All in Agent，再融一轮", "delta": { "career": 35, "wealth": -15 }, "nextNodeId": "ai-n4" },
-        { "id": "ai-profit-first", "text": "先盈利，不追风口", "delta": { "wealth": 25, "happiness": 20 }, "nextNodeId": "ai-n4" },
-        { "id": "ai-exit", "text": "卖掉公司，落袋为安", "delta": { "wealth": 40, "career": 10, "happiness": 25 }, "nextNodeId": "ai-n4" }
+        { "id": "ai-profit-first", "text": "先盈利，不追风口", "delta": { "wealth": 25, "happiness": 20 }, "nextNodeId": "ai-n4" }
+      ]
+    },
+    "ai-n3f": {
+      "id": "ai-n3f",
+      "age": 32,
+      "title": "烧钱过快，董事会要换CEO",
+      "description": "财务模型不好看。你可以认错收缩，也可以赌最后一轮融资。",
+      "choices": [
+        { "id": "ai-acquihire", "text": "接受大厂收购，团队并入", "delta": { "wealth": 35, "career": 15, "happiness": 10 }, "nextNodeId": "ai-n4" },
+        { "id": "ai-exit", "text": "主动卖掉公司，落袋为安", "delta": { "wealth": 40, "career": 10, "happiness": 25 }, "nextNodeId": "ai-n4" }
+      ]
+    },
+    "ai-n3c": {
+      "id": "ai-n3c",
+      "age": 32,
+      "title": "合伙和解后，产品终于付费",
+      "description": "第一笔企业合同到账。你们在办公室喝了顿庆功酒。",
+      "choices": [
+        { "id": "ai-end-unicorn", "text": "继续融资，冲独角兽", "delta": { "wealth": 30, "career": 35 }, "nextNodeId": "ai-n4" },
+        { "id": "ai-end-rising", "text": "稳扎稳打，做盈利公司", "delta": { "career": 30, "wealth": 25 }, "nextNodeId": "ai-n4" }
       ]
     },
     "ai-n4": {
@@ -46,7 +87,7 @@
         { "id": "ai-end-unicorn", "text": "B轮后成为行业黑马", "delta": { "wealth": 40, "career": 35 }, "endingId": "ai-startup-unicorn" },
         { "id": "ai-end-rising", "text": "稳扎稳打的新贵", "delta": { "career": 30, "wealth": 25 }, "endingId": "ai-rising" },
         { "id": "ai-end-burst", "text": "泡沫破裂，带着经验重来", "delta": { "wealth": -20, "happiness": 10 }, "endingId": "ai-bubble-burst" },
-        { "id": "ai-end-wealth", "text": "套现退休，投下一批创业者", "delta": { "wealth": 45, "happiness": 30 }, "endingId": "wealth-freedom" }
+        { "id": "ai-end-wealth", "text": "套现退休，投下一批", "delta": { "wealth": 45, "happiness": 30 }, "endingId": "wealth-freedom" }
       ]
     }
   }

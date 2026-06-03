@@ -5,46 +5,86 @@
       "id": "sc-n1",
       "age": 22,
       "title": "保研还是进大厂？",
-      "description": "导师希望你读博，字节/腾讯 offer 也在手里。同学说「学历贬值了」。",
+      "description": "导师希望你读博；字节/腾讯 offer 也在手里。",
       "choices": [
-        { "id": "sc-phd-path", "text": "读博走学术", "delta": { "career": 30, "wealth": -10, "happiness": 10 }, "nextNodeId": "sc-n2" },
-        { "id": "sc-bigtech", "text": "进大厂卷绩效", "delta": { "career": 20, "wealth": 25, "happiness": -10 }, "nextNodeId": "sc-n2" },
-        { "id": "sc-startup", "text": "跟师兄创业", "delta": { "career": 25, "wealth": -15, "happiness": 15 }, "nextNodeId": "sc-n2" }
+        { "id": "sc-phd-path", "text": "读博走学术", "delta": { "career": 30, "wealth": -10, "happiness": 10 }, "nextNodeId": "sc-n2p" },
+        { "id": "sc-bigtech", "text": "进大厂卷绩效", "delta": { "career": 20, "wealth": 25, "happiness": -10 }, "nextNodeId": "sc-n2t" },
+        { "id": "sc-startup", "text": "跟师兄创业", "delta": { "career": 25, "wealth": -15, "happiness": 15 }, "nextNodeId": "sc-n2s" }
       ]
     },
-    "sc-n2": {
-      "id": "sc-n2",
-      "age": 26,
-      "title": "AI浪潮来了，学霸光环还亮吗？",
-      "description": "实验室师弟用GPT写论文；产品岗同学说「会调Prompt比会推导吃香」。",
-      "flavor": "学霸也可能被时代淘汰——反差核心",
+    "sc-n2p": {
+      "id": "sc-n2p",
+      "age": 24,
+      "title": "博二，师弟用GPT写论文冲上热搜",
+      "description": "导师问你的创新点。实验室经费削减，你在改第7版开题报告。",
+      "flavor": "承接：你选了学术，所以此刻在论文和时代之间",
       "choices": [
-        { "id": "sc-pivot-ai", "text": "全力转型AI方向", "delta": { "career": 35, "wealth": 15 }, "nextNodeId": "sc-n3" },
-        { "id": "sc-stay-track", "text": "坚守原专业/岗位", "delta": { "career": -15, "happiness": -10 }, "nextNodeId": "sc-n3" },
-        { "id": "sc-civil", "text": "考公，求稳定", "delta": { "career": 15, "wealth": 10, "happiness": 20 }, "nextNodeId": "sc-n3" }
+        { "id": "sc-phd-ai", "text": "把方向改成AI交叉，赌热点", "delta": { "career": 25, "wealth": 5 }, "nextNodeId": "sc-n3p" },
+        { "id": "sc-phd-pure", "text": "坚守原方向，慢慢磨", "delta": { "career": 15, "happiness": -10 }, "nextNodeId": "sc-n3p" }
       ]
     },
-    "sc-n3": {
-      "id": "sc-n3",
-      "age": 30,
-      "title": "同学会上的对比最伤人",
-      "description": "有人上市敲钟，有人负债离婚。你的名片上还印着「精英」两个字。",
+    "sc-n2t": {
+      "id": "sc-n2t",
+      "age": 24,
+      "title": "大厂第二年，绩效3.25（低于预期）",
+      "description": "Leader说「要拥抱变化」。同期有人转AI组涨薪，有人被裁。",
+      "flavor": "承接：你选了打工，所以此刻在绩效压力里",
       "choices": [
-        { "id": "sc-compare-startup", "text": "辞职All in创业", "delta": { "career": 30, "wealth": -20 }, "nextNodeId": "sc-n4" },
-        { "id": "sc-compare-stable", "text": "接受平凡，专注生活", "delta": { "happiness": 25, "love": 20, "career": -5 }, "nextNodeId": "sc-n4" },
-        { "id": "sc-compare-burn", "text": "继续内卷，要赢", "delta": { "career": 25, "wealth": 20, "happiness": -25 }, "nextNodeId": "sc-n4" }
+        { "id": "sc-pivot-ai", "text": "申请转AI组，降薪换赛道", "delta": { "career": 35, "wealth": -5, "happiness": 5 }, "nextNodeId": "sc-n3t" },
+        { "id": "sc-stay-track", "text": "死守本组，熬Senior", "delta": { "career": -10, "happiness": -10 }, "nextNodeId": "sc-n3t" }
+      ]
+    },
+    "sc-n2s": {
+      "id": "sc-n2s",
+      "age": 24,
+      "title": "创业公司A轮前，师兄和投资人吵架",
+      "description": "股权稀释表摊在你面前。你手里0.3个点，但每天睡公司。",
+      "flavor": "承接：你选了创业，所以此刻在股权和信任危机里",
+      "choices": [
+        { "id": "sc-startup-stay", "text": "站师兄，继续跟到底", "delta": { "career": 30, "wealth": -10 }, "nextNodeId": "sc-n3s" },
+        { "id": "sc-startup-leave", "text": "拿钱离场，回大厂", "delta": { "wealth": 20, "career": 10, "happiness": -5 }, "nextNodeId": "sc-n3s" }
+      ]
+    },
+    "sc-n3p": {
+      "id": "sc-n3p",
+      "age": 28,
+      "title": "博士毕业在即，教职还是工业界？",
+      "description": "高校编制缩招；AI公司开价是你导师年薪的两倍。",
+      "choices": [
+        { "id": "sc-end-prof", "text": "非教职不进，学术理想", "delta": { "career": 25, "happiness": 15 }, "nextNodeId": "sc-n4" },
+        { "id": "sc-phd-industry", "text": "去工业界，钱多但加班狠", "delta": { "wealth": 25, "career": 20, "happiness": -10 }, "nextNodeId": "sc-n4" }
+      ]
+    },
+    "sc-n3t": {
+      "id": "sc-n3t",
+      "age": 28,
+      "title": "同学会：有人上市，有人被裁",
+      "description": "你的名片上还印着「精英」。当初选的路，此刻要对上成绩单。",
+      "choices": [
+        { "id": "sc-compare-burn", "text": "继续内卷，要赢", "delta": { "career": 25, "wealth": 20, "happiness": -25 }, "nextNodeId": "sc-n4" },
+        { "id": "sc-civil", "text": "备考公务员，降薪换稳", "delta": { "career": 15, "wealth": 10, "happiness": 20 }, "nextNodeId": "sc-n4" }
+      ]
+    },
+    "sc-n3s": {
+      "id": "sc-n3s",
+      "age": 28,
+      "title": "公司B轮后，你的期权能兑现吗？",
+      "description": "估值涨了，但离职条款苛刻。师兄让你再赌一年。",
+      "choices": [
+        { "id": "sc-compare-startup", "text": "All in留到上市", "delta": { "career": 30, "wealth": -10 }, "nextNodeId": "sc-n4" },
+        { "id": "sc-compare-stable", "text": "套现走人，买房结婚", "delta": { "happiness": 25, "love": 20, "wealth": 20 }, "nextNodeId": "sc-n4" }
       ]
     },
     "sc-n4": {
       "id": "sc-n4",
       "age": 35,
-      "title": "人生下半场怎么走？",
+      "title": "学霸人生的终局",
       "isFinale": true,
       "choices": [
-        { "id": "choice-ai-pivot", "text": "做AI教育/应用", "delta": { "career": 30, "wealth": 25 }, "endingId": "ai-rising" },
+        { "id": "choice-ai-pivot", "text": "做AI教育产品，学术+商业", "delta": { "career": 30, "wealth": 25 }, "endingId": "ai-rising" },
         { "id": "sc-end-prof", "text": "学术路线走到底", "delta": { "career": 25, "happiness": 15 }, "endingId": "professor-path" },
         { "id": "sc-end-fall", "text": "承认跟不上时代", "delta": { "career": -20, "happiness": -15 }, "endingId": "scholar-burnout" },
-        { "id": "choice-civil-service", "text": "体制内求安稳", "delta": { "happiness": 20, "wealth": 10 }, "endingId": "civil-servant" }
+        { "id": "choice-civil-service", "text": "体制内安稳", "delta": { "happiness": 20, "wealth": 10 }, "endingId": "civil-servant" }
       ]
     }
   }

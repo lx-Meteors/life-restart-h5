@@ -296,6 +296,34 @@ body {
   color: var(--text-muted);
 }
 
+.story-continuity {
+  margin: 12px 0 4px;
+  padding: 12px 14px;
+  background: rgba(255, 107, 107, 0.08);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.story-continuity-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.story-continuity-choice {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+.story-continuity-path {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
 .story-card {
   background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.08);

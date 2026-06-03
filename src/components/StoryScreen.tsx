@@ -34,6 +34,8 @@ export function StoryScreen({
   onChoice,
 }: Props) {
   const visibleChoices = filterChoices(node.choices, choiceHistory);
+  const lastChoice = choiceHistory.length > 0 ? choiceHistory[choiceHistory.length - 1] : null;
+  const pathTrail = choiceHistory.map((h) => h.choiceText);
 
   return (
     <section className="screen story-screen">
@@ -56,6 +58,18 @@ export function StoryScreen({
       </header>
 
       <AttributeBars attributes={attributes} compact />
+
+      {lastChoice && (
+        <div className="story-continuity">
+          <p className="story-continuity-label">因你上一题的选择</p>
+          <p className="story-continuity-choice">「{lastChoice.choiceText}」</p>
+          {pathTrail.length > 1 && (
+            <p className="story-continuity-path">
+              你已走过：{pathTrail.join(' → ')}
+            </p>
+          )}
+        </div>
+      )}
 
       <article className="story-card">
         {node.flavor && <p className="story-flavor">{node.flavor}</p>}

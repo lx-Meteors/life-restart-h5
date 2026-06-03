@@ -1,17 +1,12 @@
-import { useMemo } from 'react';
 import { useGame } from '@/hooks/useGame';
 import { SplashScreen } from '@/components/SplashScreen';
 import { IdentitySelect } from '@/components/IdentitySelect';
 import { StoryScreen } from '@/components/StoryScreen';
 import { ResultScreen } from '@/components/ResultScreen';
 import { Toast } from '@/components/Toast';
-import { getStoryline } from '@/data';
 
-function countNodes(identityId: string): number {
-  const pack = getStoryline(identityId);
-  if (!pack) return 4;
-  return Object.keys(pack.nodes).length;
-}
+/** 每条线玩家大约做 4 次选择到结局（进度条用） */
+const STEPS_PER_RUN = 4;
 
 export default function App() {
   const {
@@ -28,10 +23,7 @@ export default function App() {
     viewOtherLives,
   } = useGame();
 
-  const totalSteps = useMemo(
-    () => (state.identityId ? countNodes(state.identityId) : 4),
-    [state.identityId]
-  );
+  const totalSteps = STEPS_PER_RUN;
 
   const stepIndex = state.choiceHistory.length;
 

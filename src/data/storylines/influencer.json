@@ -6,44 +6,85 @@
       "age": 23,
       "title": "爆火之后，第一条商务来了",
       "description": "品牌方报价让你怀疑人生。评论区开始有人扒你旧照。",
-      "flavor": "网红开局：可能塌房，也可能长红",
       "choices": [
-        { "id": "if-take-all-ads", "text": "什么单都接，先变现", "delta": { "wealth": 30, "career": 15, "happiness": -10 }, "nextNodeId": "if-n2" },
-        { "id": "if-picky", "text": "精挑细选，立人设", "delta": { "career": 25, "wealth": 10, "happiness": 10 }, "nextNodeId": "if-n2" },
-        { "id": "if-mcN", "text": "签约MCN，交给专业团队", "delta": { "career": 20, "wealth": 15, "love": -5 }, "nextNodeId": "if-n2" }
+        { "id": "if-take-all-ads", "text": "什么单都接，先变现", "delta": { "wealth": 30, "career": 15, "happiness": -10 }, "nextNodeId": "if-n2a" },
+        { "id": "if-picky", "text": "精挑细选，立人设", "delta": { "career": 25, "wealth": 10, "happiness": 10 }, "nextNodeId": "if-n2b" },
+        { "id": "if-mcN", "text": "签约MCN，交给专业团队", "delta": { "career": 20, "wealth": 15, "love": -5 }, "nextNodeId": "if-n2c" }
       ]
     },
-    "if-n2": {
-      "id": "if-n2",
-      "age": 26,
-      "title": "直播带货还是内容精品化？",
+    "if-n2a": {
+      "id": "if-n2a",
+      "age": 24,
+      "title": "连接三无产品，粉丝在评论区开战",
+      "description": "佣金到账很快，但掉粉一万。公关说「再发一条澄清就好」。",
+      "flavor": "承接：你选了啥单都接，所以此刻在信任危机里",
       "choices": [
-        { "id": "choice-livestream", "text": "全职直播带货", "delta": { "wealth": 35, "career": 25, "happiness": -5 }, "nextNodeId": "if-n3" },
-        { "id": "if-quality", "text": "慢工出细活，拍纪录片风", "delta": { "career": 30, "wealth": -10, "happiness": 20 }, "nextNodeId": "if-n3" },
-        { "id": "if-scandal-risk", "text": "接争议产品，佣金翻倍", "delta": { "wealth": 40, "career": -15 }, "nextNodeId": "if-n3" }
+        { "id": "if-scandal-risk", "text": "继续接争议单，佣金翻倍", "delta": { "wealth": 40, "career": -15 }, "nextNodeId": "if-n3a" },
+        { "id": "if-apologize-early", "text": "删视频道歉，掉粉也认", "delta": { "career": -10, "happiness": -5, "love": 5 }, "nextNodeId": "if-n3a" }
       ]
     },
-    "if-n3": {
-      "id": "if-n3",
-      "age": 29,
-      "title": "黑料上热搜了",
+    "if-n2b": {
+      "id": "if-n2b",
+      "age": 24,
+      "title": "精品视频播放量下滑，团队催你带货",
+      "description": "你坚持一个月只更两条长视频。银行卡余额在报警。",
+      "flavor": "承接：你选了立人设，所以此刻在质和量之间",
+      "choices": [
+        { "id": "if-quality-hold", "text": "坚持精品，不接低质商单", "delta": { "career": 30, "wealth": -15, "happiness": 15 }, "nextNodeId": "if-n3b" },
+        { "id": "choice-livestream", "text": "妥协开播带货，救流水", "delta": { "wealth": 35, "career": 20, "happiness": -10 }, "nextNodeId": "if-n3b" }
+      ]
+    },
+    "if-n2c": {
+      "id": "if-n2c",
+      "age": 24,
+      "title": "MCN让你签独家，分成比例被压",
+      "description": "合同三十页，违约金价高。不签可能失去流量扶持。",
+      "flavor": "承接：你选了MCN，所以此刻在合同谈判里",
+      "choices": [
+        { "id": "if-mcn-sign", "text": "签独家，换流量", "delta": { "career": 25, "wealth": 10, "happiness": -10 }, "nextNodeId": "if-n3c" },
+        { "id": "if-mcn-leave", "text": "不签，带粉丝单干", "delta": { "career": 15, "wealth": -10, "happiness": 10 }, "nextNodeId": "if-n3c" }
+      ]
+    },
+    "if-n3a": {
+      "id": "if-n3a",
+      "age": 27,
+      "title": "黑料上热搜，品牌方集体解约",
       "description": "可能是早年言论，也可能是合作方暴雷。公关费报价六位起。",
       "choices": [
-        { "id": "if-scandal", "text": "冷处理，结果越闹越大", "delta": { "career": -35, "wealth": -25, "happiness": -30 }, "nextNodeId": "if-n4" },
-        { "id": "if-apologize", "text": "直播道歉，暂时退网", "delta": { "career": -15, "happiness": -10, "love": 5 }, "nextNodeId": "if-n4" },
+        { "id": "if-scandal", "text": "冷处理，越闹越大", "delta": { "career": -35, "wealth": -25, "happiness": -30 }, "nextNodeId": "if-n4" },
         { "id": "if-legal", "text": "硬刚造谣，走法律程序", "delta": { "career": 10, "wealth": -15 }, "nextNodeId": "if-n4" }
+      ]
+    },
+    "if-n3b": {
+      "id": "if-n3b",
+      "age": 27,
+      "title": "粉丝破五百万，你要不要开公司？",
+      "description": "税务顾问、经纪人、选品团队——「个人IP」到「公司化」的分水岭。",
+      "choices": [
+        { "id": "if-business", "text": "注册公司，做MCN老板", "delta": { "wealth": 30, "career": 35 }, "nextNodeId": "if-n4" },
+        { "id": "if-solo", "text": "保持个人创作者，轻资产", "delta": { "happiness": 20, "wealth": 10 }, "nextNodeId": "if-n4" }
+      ]
+    },
+    "if-n3c": {
+      "id": "if-n3c",
+      "age": 27,
+      "title": "合约到期，平台算法又变了",
+      "description": "播放量腰斩。新人一批批起来，你的「人设」还新鲜吗？",
+      "choices": [
+        { "id": "if-rebrand", "text": "改人设复出，赌正能量", "delta": { "career": 25, "happiness": 10 }, "nextNodeId": "if-n4" },
+        { "id": "if-fall-end", "text": "退网，回归素人", "delta": { "career": -25, "happiness": 15 }, "nextNodeId": "if-n4" }
       ]
     },
     "if-n4": {
       "id": "if-n4",
-      "age": 32,
-      "title": "流量时代的一课",
+      "age": 30,
+      "title": "流量时代的一课，终局",
       "isFinale": true,
       "choices": [
-        { "id": "if-comeback", "text": "复出，转型正能量", "delta": { "career": 25, "happiness": 10 }, "endingId": "livestream-star" },
+        { "id": "if-comeback", "text": "复出直播带货，GMV再战", "delta": { "career": 25, "wealth": 30 }, "endingId": "livestream-star" },
         { "id": "if-fall-end", "text": "彻底凉透，回归素人", "delta": { "career": -25, "happiness": 15 }, "endingId": "influencer-fall" },
         { "id": "if-business", "text": "幕后做MCN老板", "delta": { "wealth": 30, "career": 35 }, "endingId": "top-entrepreneur" },
-        { "id": "if-one-hit", "text": "偶尔接点小广告，维持生活", "delta": { "happiness": 20, "wealth": 5 }, "endingId": "viral-one-hit" }
+        { "id": "if-one-hit", "text": "偶尔接小广告，维持生活", "delta": { "happiness": 20, "wealth": 5 }, "endingId": "viral-one-hit" }
       ]
     }
   }
